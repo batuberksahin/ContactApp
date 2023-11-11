@@ -1,6 +1,12 @@
+using ContactApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ContactAppDbContext>(options =>
+    options.UseSqlite("Data Source=app.db"));
 
 var app = builder.Build();
 
