@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Login - Contacts";
+}
+
+<section id="contacts">
+    <header>
+        <h2>Contacts App</h2>
+        <p>Welcome, please login.</p>
+    </header>
+    
+    <main>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+                
+        <form asp-controller="Users" asp-action="Login" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </main>
+</section>
