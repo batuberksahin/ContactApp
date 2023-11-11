@@ -5,7 +5,7 @@ namespace ContactApp.Data
 {
     public class ContactAppDbContext : DbContext
     {
-        public DbSet<UserModel> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public ContactAppDbContext(DbContextOptions<ContactAppDbContext> options) : base(options)
         {
@@ -13,7 +13,7 @@ namespace ContactApp.Data
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserModel>().HasKey(u => u.Id);
+            modelBuilder.Entity<User>().HasKey(u => u.Id);
         }
     }
 }
