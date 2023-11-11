@@ -12,10 +12,12 @@ namespace ContactApp.Controllers;
 public class UsersController : Controller
 {
     private readonly ContactAppDbContext _context;
+    private readonly ILogger<UsersController> _logger;
 
-    public UsersController(ContactAppDbContext context)
+    public UsersController(ContactAppDbContext context, ILogger<UsersController> logger)
     {
         _context = context;
+        _logger = logger;
     }
     
     [AllowAnonymous]
@@ -24,7 +26,7 @@ public class UsersController : Controller
     {
         if (User.Identity.IsAuthenticated)
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("List", "Contacts");
         }
         
         return View("~/Views/Users/Login.cshtml");
@@ -61,7 +63,7 @@ public class UsersController : Controller
                     new ClaimsPrincipal(claimsIdentity),
                     authProperties);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("List", "Contacts");
             }
             else
             {

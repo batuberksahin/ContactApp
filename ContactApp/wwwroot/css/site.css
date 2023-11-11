@@ -24,3 +24,18 @@ body {
 main {
   max-width: 40%;
 }
+
+input[type="password"] {
+  display: block;
+  width: 250px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 250px;
+}
+
+.login-button {
+  display: block;
+  width: 100%;
+}

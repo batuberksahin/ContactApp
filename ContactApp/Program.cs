@@ -36,4 +36,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Users}/{action=Login}/{id?}");
 
+app.MapControllerRoute(
+    name: "contacts",
+    pattern: "Contacts",
+    defaults: new { controller = "Contacts", action = "List" });
+
 app.Run();
