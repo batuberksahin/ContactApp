@@ -29,6 +29,12 @@ public class ContactsController : Controller
             .Where(c => c.OwnerId == userId)
             .ToListAsync();
 
+        if (TempData["ErrorMessage"] != null)
+        {
+            ViewBag.ErrorMessage = TempData["ErrorMessage"].ToString();
+            TempData.Remove("ErrorMessage");
+        }
+        
         return View("~/Views/Contacts/List.cshtml", contactList);
     }
     
@@ -60,13 +66,15 @@ public class ContactsController : Controller
     {
         if (string.IsNullOrEmpty(contactName) || string.IsNullOrEmpty(phoneNumber))
         {
-            ViewBag.ErrorMessage = "Name or number is empty!";
+            TempData["ErrorMessage"] = "Name or number is empty!";
+
             return RedirectToAction("List");
         }
 
         if (!IsPhoneNumberValid(phoneNumber))
         {
-            ViewBag.ErrorMessage = "Invalid phone number!";
+            TempData["ErrorMessage"] = "Invalid phone number!";
+
             return RedirectToAction("List");
         }
 

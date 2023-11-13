@@ -36,6 +36,13 @@
             <p>No contacts found.</p>
         }
 
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        
         <div>
             <form asp-controller="Contacts" asp-action="Add" method="post" class="add-contact-form">
                 <div>
@@ -51,5 +58,12 @@
                 </div>
             </form>
         </div>
+        
+        <div class="logout-container" class="logout">
+            <form asp-controller="Users" asp-action="Logout" method="post">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </div>
+
     </div>
 </section>

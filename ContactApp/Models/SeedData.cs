@@ -24,19 +24,19 @@ public static class SeedData
             {
                 Id = new Guid(),
                 Username = "batuberk",
-                Password = BCrypt.Net.BCrypt.HashPassword("testpassword")
+                Password = BCrypt.Net.BCrypt.HashPassword("batuberk")
             },
             new User
             {
                 Id = new Guid(),
-                Username = "testuser",
-                Password = BCrypt.Net.BCrypt.HashPassword("test")
+                Username = "test_user",
+                Password = BCrypt.Net.BCrypt.HashPassword("test_password")
             },
             new User
             {
                 Id = new Guid(),
-                Username = "johndoe",
-                Password = BCrypt.Net.BCrypt.HashPassword("foobar")
+                Username = "berksahin",
+                Password = BCrypt.Net.BCrypt.HashPassword("berksahin")
             }
         );
         

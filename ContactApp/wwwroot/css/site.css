@@ -57,6 +57,14 @@ input[type="text"] {
   font-weight: bold;
 }
 
+.logout {
+  margin-top: 2rem;
+}
+
+.logout-button {
+  width: 100%;
+}
+
 .shrink-3 {
   flex-shrink: 3;
 }
