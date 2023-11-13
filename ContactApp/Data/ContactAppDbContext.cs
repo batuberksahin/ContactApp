@@ -10,6 +10,7 @@ namespace ContactApp.Data
 
         public ContactAppDbContext(DbContextOptions<ContactAppDbContext> options) : base(options)
         {
+            Database.Migrate();
         }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
