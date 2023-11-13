@@ -8,7 +8,7 @@ You can download Windows executables from [Releases](https://github.com/batuberk
 
 Everything is included in the executables, you don't need to do anything extra.
 
-After the execution you can run [http://localhost:5001](http://localhost:5001)
+After the execution you can run [http://localhost:5001](http://localhost:5000)
 
 ## Test
 
